@@ -1,4 +1,4 @@
-package com.skillassure.wastebox.unittest;
+/*package com.skillassure.wastebox.unittest;
 
 import static org.junit.Assert.assertEquals;
 
@@ -32,4 +32,4 @@ import com.skillassure.wastebox.restapi.biowaste.biodeatils.BioDetailsController
 //	public void check() {
 //		assertEquals(true, true);
 //	}
-//}
+//}*/
