@@ -14,16 +14,16 @@ import com.skillassure.wastebox.repository.plasticwaste.plasticdetails.PickUpPer
 @Service
 public class PickUpPersonDetailsService {
 
-	// Calling the PickUpPersonDetails Repository
+	// Calling the EPickUpPersonDetails Repository
 	@Autowired
 	private PickUpPersonDetailsRepository pickUpPersonDetailsRepository;
 
-	//Getting the PickUpPersonDetails by using ID
+	//Getting the EPickUpPersonDetails by using ID
 	public Optional<PickUpPersonDetails> getPickUpPersonById(long id) {
 		return pickUpPersonDetailsRepository.findById(id);
 	}
 
-	//getting the list of Request by using PickUpPersonDetails repository
+	//getting the list of Request by using EPickUpPersonDetails repository
 	public List<PickUpPersonDetails> getAllPickUpPerson() {
 		return pickUpPersonDetailsRepository.findAll();
 	}

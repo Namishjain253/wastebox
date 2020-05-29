@@ -1,4 +1,12 @@
+/**
+ * 
+ */
 package com.skillassure.wastebox.model.ewaste.product;
+
+/**
+ * @author Raghavendra
+ *
+ */
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -6,115 +14,143 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.Table;
 
-
 @Entity
 @Table(name = "productdetails")
 public class Product {
-	
+
+	// Instance Variables
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	private long id;
-	private String type;
-	private String brand;
-	private String model;
-	private String imeino;
-	private String description;
-	private String picture;
-	private boolean damages;
+	private String category;
+	private String productName;
+	private String productModel;
+	private String imei;
+	private String ram_ltrs_kgs;
+	private int quantity;
 
 	// Default Constructor
-	public Product() {
-	}
+	public Product() {	}
 
-	/**
-	 * Instantiates a new product.
-	 *
-	 * @param id the id
-	 * @param type the type
-	 * @param brand the brand
-	 * @param model the model
-	 * @param imeino the imeino
-	 * @param description the description
-	 * @param picture the picture
-	 * @param damages the damages
-	 */
 	// Parameterized Constructor
-	public Product(long id, String type, String brand, String model, String imeino, String description, String picture,
-			boolean damages) {
+	/*
+	 * @param id
+	 * @param category
+	 * @param productName
+	 * @param productModel
+	 * @param iMEI
+	 * @param rAM_ltrs_kgs
+	 * @param quantity
+	 */
+	public Product(long id, String category, String productName, String productModel, String imei, String ram_ltrs_kgs ,
+			int quantity) {
 		super();
 		this.id = id;
-		this.type = type;
-		this.brand = brand;
-		this.model = model;
-		this.imeino = imeino;
-		this.description = description;
-		this.picture = picture;
-		this.damages = damages;
+		this.category = category;
+		this.productName = productName;
+		this.productModel = productModel;
+		this.imei = imei;
+		this.ram_ltrs_kgs = ram_ltrs_kgs;
+		this.quantity = quantity;
 	}
 
-	// Getter and Setter Methods
+	
+	//Getter and Setter Methods
+	/**
+	 * @return the id
+	 */
 	public long getId() {
 		return id;
 	}
 
+	/**
+	 * @param id the id to set
+	 */
 	public void setId(long id) {
 		this.id = id;
 	}
 
-	public String getType() {
-		return type;
+	/**
+	 * @return the category
+	 */
+	public String getCategory() {
+		return category;
 	}
 
-	public void setType(String type) {
-		this.type = type;
+	/**
+	 * @param category the category to set
+	 */
+	public void setCategory(String category) {
+		this.category = category;
 	}
 
-	public String getBrand() {
-		return brand;
+	/**
+	 * @return the productName
+	 */
+	public String getProductName() {
+		return productName;
 	}
 
-	public void setBrand(String brand) {
-		this.brand = brand;
+	/**
+	 * @param productName the productName to set
+	 */
+	public void setProductName(String productName) {
+		this.productName = productName;
 	}
 
-	public String getModel() {
-		return model;
+	/**
+	 * @return the productModel
+	 */
+	public String getProductModel() {
+		return productModel;
 	}
 
-	public void setModel(String model) {
-		this.model = model;
+	/**
+	 * @param productModel the productModel to set
+	 */
+	public void setProductModel(String productModel) {
+		this.productModel = productModel;
 	}
 
-	public String getImeino() {
-		return imeino;
+	/**
+	 * @return the imei
+	 */
+	public String getImei() {
+		return imei;
 	}
 
-	public void setImeino(String imeino) {
-		this.imeino = imeino;
+	/**
+	 * @param imei the imei to set
+	 */
+	public void setImei(String imei) {
+		this.imei = imei;
 	}
 
-	public String getDescription() {
-		return description;
+	/**
+	 * @return the ram_ltrs_kgs
+	 */
+	public String getRam_ltrs_kgs() {
+		return ram_ltrs_kgs;
 	}
 
-	public void setDescription(String description) {
-		this.description = description;
+	/**
+	 * @param ram_ltrs_kgs the ram_ltrs_kgs to set
+	 */
+	public void setRam_ltrs_kgs(String ram_ltrs_kgs) {
+		this.ram_ltrs_kgs = ram_ltrs_kgs;
 	}
 
-	public String getPicture() {
-		return picture;
+	/**
+	 * @return the quantity
+	 */
+	public int getQuantity() {
+		return quantity;
 	}
 
-	public void setPicture(String picture) {
-		this.picture = picture;
-	}
-
-	public boolean isDamages() {
-		return damages;
-	}
-
-	public void setDamages(boolean damages) {
-		this.damages = damages;
-	}
-
+	/**
+	 * @param quantity the quantity to set
+	 */
+	public void setQuantity(int quantity) {
+		this.quantity = quantity;
+	}	
 }
