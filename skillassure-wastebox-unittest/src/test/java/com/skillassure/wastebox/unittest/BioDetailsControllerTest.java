@@ -1,4 +1,4 @@
-package com.skillassure.wastebox.unittest;
+/*package com.skillassure.wastebox.unittest;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -102,4 +102,4 @@ import com.skillassure.wastebox.restapi.biowaste.biodeatils.BioDetailsController
 //    		System.out.println(bioDetails);
 //		}
 //	}
-//}
+//}*/
