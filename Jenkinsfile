@@ -15,6 +15,7 @@ pipeline{
 		stage ( 'Build'){
 			steps {
 			 sh label: '', script: 'mvn clean install'
+			 sh label: '', script: 'mvn clean package'
 			 }
 			}			
 		stage( 'Build Docker image'){
