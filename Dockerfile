@@ -1,3 +1,3 @@
 FROM adoptopenjdk/openjdk8
-ADD target/Wastemanagement.jar . 
-ENTRYPOINT ["java","-jar", "Wastemanagement.jar"]
+ADD skillassure-wastebox-restapi/target/skillassure-wastebox-restapi-0.0.1-SNAPSHOT.jar/ . 
+ENTRYPOINT ["java","-jar", "skillassure-wastebox-restapi-0.0.1-SNAPSHOT.jar"]
