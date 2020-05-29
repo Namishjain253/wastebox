@@ -1,8 +1,8 @@
 pipeline{
     agent { label 'Dockerhost' }
     environment {
-              wastemanagementbackend = ''
-              registry = "tapskillassure/wastemanagementbackend"
+              wasteboxbackend = ''
+              registry = "tapskillassure/wasteboxbackend"
               registryCredential = 'tapdockerhub'
        }
     stages {
