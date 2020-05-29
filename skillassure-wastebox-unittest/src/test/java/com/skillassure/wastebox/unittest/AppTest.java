@@ -1,4 +1,4 @@
-package org.skillassure.wastebox.unittest;
+package com.skillassure.wastebox.unittest;
 
 import junit.framework.Test;
 import junit.framework.TestCase;

@@ -25,6 +25,7 @@
 			<groupId>org.apache.tomcat.embed</groupId>
 			<artifactId>tomcat-embed-jasper</artifactId>
 		</dependency>
+	
 
     <dependency>
     	<groupId>com.skillassure.wastebox</groupId>
@@ -47,7 +48,10 @@
     	<artifactId>skillassure-wastebox-authentication</artifactId>
     	<version>0.0.1-SNAPSHOT</version>
     </dependency>
+    
+
   </dependencies>
+
   <build>
   
 		<plugins>
