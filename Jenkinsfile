@@ -28,7 +28,7 @@ pipeline{
           steps{
 				script {
 					docker.withRegistry( '', registryCredential ) {
-						wastemanagementbackend.push()
+						wasteboxbackend.push()
                        }
                  }
                }
