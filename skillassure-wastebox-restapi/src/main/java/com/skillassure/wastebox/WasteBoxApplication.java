@@ -8,6 +8,9 @@ import org.springframework.context.annotation.ComponentScan;
 import org.springframework.data.jpa.repository.config.EnableJpaRepositories;
 
 @SpringBootApplication
+@EnableAutoConfiguration
+//@ComponentScan
+//@EntityScan(basePackages = {"com.skillassure.wastebox.model"})
 public class WasteBoxApplication {
 
 	public static void main(String[] args) {

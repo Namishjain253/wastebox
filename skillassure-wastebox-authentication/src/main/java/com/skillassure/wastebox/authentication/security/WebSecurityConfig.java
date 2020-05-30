@@ -36,7 +36,6 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	@Autowired
 	private AuthEntryPointJwt unauthorizedHandler;
 
-	
 	@Bean
 	public AuthTokenFilter authenticationJwtTokenFilter() {
 		return new AuthTokenFilter();
@@ -60,30 +59,29 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
-		http.cors().and().csrf().disable()
-			.exceptionHandling().authenticationEntryPoint(unauthorizedHandler).and()
-			.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS).and()
-			.authorizeRequests().antMatchers("/**").permitAll().
-			anyRequest().authenticated().and().exceptionHandling().authenticationEntryPoint( unauthorizedHandler).and().sessionManagement()
-			.sessionCreationPolicy(SessionCreationPolicy.STATELESS);
+		http.cors().and().csrf().disable().exceptionHandling().authenticationEntryPoint(unauthorizedHandler).and()
+				.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS).and().authorizeRequests()
+				.antMatchers("/**").permitAll().anyRequest().authenticated().and().exceptionHandling()
+				.authenticationEntryPoint(unauthorizedHandler).and().sessionManagement()
+				.sessionCreationPolicy(SessionCreationPolicy.STATELESS);
 
 		http.addFilterBefore(authenticationJwtTokenFilter(), UsernamePasswordAuthenticationFilter.class);
 	}
-	
+
 	// Give Access to other domain / or solve corsFilter Problem
-		@Bean
-		public CorsFilter corsFilter() {
-			UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
-			CorsConfiguration config = new CorsConfiguration();
-			config.setAllowCredentials(true);
-			config.addAllowedOrigin("*");
-			config.addAllowedHeader("*");
-			config.addAllowedMethod("OPTIONS");
-			config.addAllowedMethod("GET");
-			config.addAllowedMethod("POST");
-			config.addAllowedMethod("PUT");
-			config.addAllowedMethod("DELETE");
-			source.registerCorsConfiguration("/**", config);
-			return new CorsFilter(source);
-		}
+	@Bean
+	public CorsFilter corsFilter() {
+		UrlBasedCorsConfigurationSource source = new UrlBasedCorsConfigurationSource();
+		CorsConfiguration config = new CorsConfiguration();
+		config.setAllowCredentials(true);
+		config.addAllowedOrigin("*");
+		config.addAllowedHeader("*");
+		config.addAllowedMethod("OPTIONS");
+		config.addAllowedMethod("GET");
+		config.addAllowedMethod("POST");
+		config.addAllowedMethod("PUT");
+		config.addAllowedMethod("DELETE");
+		source.registerCorsConfiguration("/**", config);
+		return new CorsFilter(source);
+	}
 }
