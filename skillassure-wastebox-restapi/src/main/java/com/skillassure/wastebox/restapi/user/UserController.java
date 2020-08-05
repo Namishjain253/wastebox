@@ -78,6 +78,7 @@ public class UserController {
 
 		if (service.existsByEmail(signUpRequest.getEmail())) {	
 			return ResponseEntity.badRequest().body(new MessageResponse("Email is already in use!"));
+//			return ResponseEntity.ok(new MessageResponse("Email is already in use!"));
 		}
 		
 		long mobile = 0;
@@ -112,5 +113,6 @@ public class UserController {
 		service.save(user);
 
 		return ResponseEntity.ok(new MessageResponse("User registered successfully!"));
+//		return ResponseEntity.badRequest().body(new MessageResponse("User registered successfully!"));
 	}
 }
